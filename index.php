@@ -45,20 +45,24 @@
 				$taxS = $row4[0];
 				break; }						
 		}
-			$tax = strval($taxN . $taxS);
-			
-?>
+			$tax = $taxN . $taxS;
+
+?> 
 
 <!doctype html>
 <html lang="en">
 	<head>
+		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS-->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> 
 		<link href="bootstrap.min.css" type="text/css" rel="stylesheet">
-		<link href="bootstrap2.min.css" type="text/css" rel="stylesheet">					
+		<link href="bootstrap2.min.css" type="text/css" rel="stylesheet">	
+				
 	</head>
-	<body class="bg-dark">
+	<body class="bg-dark"> 
 		<div class="container">
 		  <div class="row">
 			<div class="col-md-5 mx-auto">
@@ -81,37 +85,48 @@
 				  <div class="form-group">
 					<input type="submit" value="Aiziet!" class="btn btn-secondary btn-sm active" name="use_button"/>
 				  </div>
-				</form>
-
+				</form>				
+				
+			<!-- LOADER
 			<div id="loading" style="display:none">		
               <img src="img/loading.gif" alt="">
-            </div>
-			<div id="results" style="display:none"><h6 class="font-weight-bold" style="font-size: 20px;">Tavs nosaukums ir:</h6>
-				<h6 class ="font-weight-bold" style="font-style: italic; font-size:30px;" id="taksTitle">		
-				<?php 
-					echo														
-					$tax;							
-				?>
-				</h6>				
-					<div class="form-group">
-					   <input type="submit" value="Printēt apliecinājumu" class="btn btn-secondary btn-sm active" onclick="exportHTML();">
-					 </div>
-					<div class="form-group">
-						<div class="input-group">
-						  <span class="input-group-addon">Tavs e-pasts:</span>
-						  <input type="text" class="form-control" id="total-payment" placeholder="Ievadi savu e-pastu">
+            </div>  -->
+			
+			<!-- RESULTS-->
+			<?php
+			if(isset($_GET['use_button'])) {
+				//if($tax !="") {
+					echo
+					'<div><h6 class="font-weight-bold" style="font-size: 20px;">Tavs nosaukums ir:</h6>
+						<h6 class ="font-weight-bold" style="font-style: italic; font-size:30px;" id="taksTitle">' . $tax . '</h6></div>' . 
+									   '<div class="form-group">
+						   <input type="submit" value="Printēt apliecinājumu" class="btn btn-secondary btn-sm active" onclick="exportHTML();">
+						 </div>
+						<div class="form-group">
+							<div class="input-group">
+							  <span class="input-group-addon">Tavs e-pasts:</span>
+							  <input type="text" class="form-control" id="total-payment" placeholder="Ievadi savu e-pastu">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<input type="submit" value="Nosūtīt apliecinājumu uz e-pastu" class="btn btn-secondary btn-sm active">
-					</div>
-					  <center><img src="footer.png" id="logo"></center>
+						<div class="form-group">
+							<input type="submit" value="Nosūtīt apliecinājumu uz e-pastu" class="btn btn-secondary btn-sm active">
+						</div>
+						  <center><img src="footer.png" id="logo"></center>
 					</div>
 				  </div>
 				</div>
 			  </div>
-			</div>
-
+						</div>'; 
+						//}
+				//else { 
+					//echo 
+						//'<div><h6 class="font-weight-bold" style="font-size: 20px;">Pārbaudiet, vai ir aizpildīti abi lauki!</h6>				
+					//</div>
+				 // </div>
+				//</div>
+			  //</div>' }
+			}
+			?>
 
 		<script src="app.js"></script>
 	</body>

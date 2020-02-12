@@ -1,0 +1,64 @@
+User: postgres
+
+
+
+
+post_max_size = 12M
+upload_max_filesize = 12M
+
+psql ITIS < itis.sql
+
+psql -h localhost -U postgres -W -d ITIS -f itis.sql
+
+db name must match with importing file name!!!
+
+
+
+es domâju, ka Tev vajag select uztaisît, kur no PHP Tu padod burtu B un tad no db tiek atlasîti rezultâti ar B
+
+Vçl ir similar_text, soundex, metaphone funkcijas
+
+
+
+Tomcat
+
+
+
+
+
+.pt-4 {
+color:#343a40;
+font-size:25px;
+font-family: "Candara";
+font-weight: bold;
+margin-top: 4%;
+margin-bottom: 8%;
+}
+
+
+
+   <script>
+		function myFunction() {
+			var x = document.getElementById("result");
+			if (x.style.display === "none") {
+			x.style.display = "block";
+		  } else {
+			x.style.display = "none";
+		  }
+	}
+		
+   </script>
+
+
+
+
+
+
+
+<?php echo $tax; ?>
+
+
+title= "<?php echo $tax; ?>"
+
+
+

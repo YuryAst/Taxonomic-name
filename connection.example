@@ -1,0 +1,20 @@
+<?php
+
+$conn = pg_connect("host=localhost port=5432 dbname=ITIS user=postgres password=bumerangs21");
+if (!$conn) {
+ echo "An error occurred.\n";
+ exit;
+}
+ 
+$result = pg_query($conn, "SELECT complete_name FROM taxonomic_units");
+if (!$result) {
+ echo "An error occurred.\n";
+ exit;
+}
+ 
+while ($row = pg_fetch_row($result)) {
+ echo "$row[0]";
+ echo "<br />\n";
+}
+
+?>
